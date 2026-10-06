@@ -1,5 +1,5 @@
 #include "InputSystem.h"
-#include "../utils/ConsoleControl.h"
+#include "../Utils/ConsoleControl.h"
 
 InputSystem::KeyBinding::KeyBinding(int key, OnKeyPress onKeyPress)
 {
@@ -136,7 +136,7 @@ void InputSystem::ListenLoop()
 		_classMutex.unlock();
 	}
 
-	_classMutex.lock(); \
+	_classMutex.lock();
 		if (_state == Stopping)
 		{
 			_state = Stopped;

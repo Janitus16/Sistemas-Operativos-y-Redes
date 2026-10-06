@@ -47,15 +47,15 @@ public:
 	/// </summary>
 
 	void StartListen();
-	void StopListener();
+	void StopListen();
 
 private:
-	// 
+	// Configuración
 
 	enum State
 	{
 		Starting = 0,
-		Lisening = 1,
+		Listening = 1,
 		Stopping = 2,
 		Stopped = 3
 	};

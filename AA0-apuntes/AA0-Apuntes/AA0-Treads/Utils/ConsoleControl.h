@@ -1,7 +1,6 @@
 #pragma once
 #include <mutex>
 #include <iostream>
-#include <mutex>
 #include <sstream>
 #include <Windows.h>
 
