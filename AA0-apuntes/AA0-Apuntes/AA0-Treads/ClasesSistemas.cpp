@@ -10,11 +10,18 @@ void CuandoPresiono1() {
 	CC::Unlock();
 }
 
+void keyName() {
+	int key = CC::WaithForReadNextKey();
+	std::cout << key;
+}
+
 int main()
 {
 	InputSystem* iS = new InputSystem();
 
 	InputSystem::KeyBinding* kb1 = iS->AddListener(K_1, CuandoPresiono1);
+
+	keyName();
 
 	iS->StartListen();
 
