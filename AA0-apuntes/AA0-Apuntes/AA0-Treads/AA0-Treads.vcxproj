@@ -141,10 +141,13 @@
   <ItemGroup>
     <ClCompile Include="ClasesSistemas.cpp" />
     <ClCompile Include="2InputSystem\InputSystem.cpp" />
+    <ClCompile Include="Utils\ConsoleControl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="1TutorialTread\TreadTutorial.h" />
+    <ClInclude Include="2InputSystem\InputsConsts.h" />
     <ClInclude Include="2InputSystem\InputSystem.h" />
+    <ClInclude Include="Utils\ConsoleControl.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

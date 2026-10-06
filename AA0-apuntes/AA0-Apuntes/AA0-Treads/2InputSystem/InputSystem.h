@@ -42,6 +42,10 @@ public:
 	KeyBinding* AddListener(int key, KeyBinding::OnKeyPress onKeyPress);
 	void RemoveAndDeleteListener(KeyBinding* keyBinding);
 
+	/// <summary>
+	/// !!This function starts key listening on thread!!
+	/// </summary>
+
 	void StartListen();
 	void StopListener();
 
