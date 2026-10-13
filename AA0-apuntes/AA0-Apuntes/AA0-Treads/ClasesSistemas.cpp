@@ -10,6 +10,8 @@ void CuandoPresiono1() {
 	CC::Unlock();
 }
 
+typedef std::function<int(int a, int b)> TestSum;
+
 void keyName() {
 	int key = CC::WaithForReadNextKey();
 	std::cout << key;
@@ -21,11 +23,48 @@ int main()
 
 	InputSystem::KeyBinding* kb1 = iS->AddListener(K_1, CuandoPresiono1);
 
-	keyName();
+	int i = 2;
+
+	InputSystem::KeyBinding* kb3 = nullptr;
+
+	InputSystem::KeyBinding* kb2 = iS->AddListener(K_2,
+		[iS, &kb3]() {
+
+			CC::Lock();
+			std::cout << "Pressed 2" << std::endl;
+			CC::Unlock();
+			
+			kb3 = iS->AddListener(K_3,
+				[]() {
+					CC::Lock();
+					std::cout << "Pressed 3" << std::endl;
+					CC::Unlock();
+				});
+
+		});
+
+	InputSystem::KeyBinding* kb4 = iS->AddListener(K_4,
+		[iS]() {
+
+			CC::Lock();
+			std::cout << "Pressed 4" << std::endl;
+			CC::Unlock();
+
+		});
 
 	iS->StartListen();
+
+	TestSum testFunc = [](int a, int b) {
+		return a + b;
+	};
+
+	CC::Lock();
+	std::cout << "Pressed " << testFunc(5, 3) << std::endl;
+	CC::Unlock();
 
 	while (true) {
 
 	}
 }
+
+// Practica 2: Snake con threads, mapa prehecho para guardar con json.
